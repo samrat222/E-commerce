@@ -1,6 +1,6 @@
 # Project Title
 
-A Fetch day API project for Internship assignment
+An E-commerce project for Internship
 
 ## Contributing
 
