@@ -1,9 +1,22 @@
-import {
-    FavoriteBorderOutlined,
-    SearchOutlined,
-    ShoppingCartOutlined,
-} from "@material-ui/icons";
 import styled from "styled-components";
+import { ShopContext } from "../context/Shop-context"
+import React, { useContext } from "react";
+
+const Product = (prop) => {
+  const { id, img, price } = prop.data;
+  const { addToCart, cartItems } = useContext(ShopContext);
+
+  const cartItemCount = cartItems[id];
+  return (
+    <Container>
+      <Circle />
+      <Image src={img} />
+      <Info>
+        <Button onClick={() => addToCart(id)}>Add to cart {cartItemCount > 0 && <> ({cartItemCount})</>}</Button>
+      </Info>
+    </Container>
+  );
+};
 
 const Info = styled.div`
   opacity: 0;
@@ -32,7 +45,7 @@ const Container = styled.div`
   background-color: #f5fbfd;
   position: relative;
 
-  &:hover ${Info}{
+  &:hover ${Info} {
     opacity: 1;
   }
 `;
@@ -50,6 +63,24 @@ const Image = styled.img`
   z-index: 2;
 `;
 
+const Button = styled.button`
+  /* cursor: pointer; */
+  background-color: transparent;
+  border: 2px solid rgb(19, 19, 19);
+  min-width: 100px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 15px;
+   &:hover {
+    background-color: rgb(19, 19, 19);
+  color: white;
+  cursor: pointer;
+  }
+`;
+
+
 const Icon = styled.div`
   width: 40px;
   height: 40px;
@@ -65,25 +96,5 @@ const Icon = styled.div`
     transform: scale(1.1);
   }
 `;
-
-const Product = ({ item }) => {
-    return (
-        <Container>
-            <Circle />
-            <Image src={item.img} />
-            <Info>
-                <Icon>
-                    <ShoppingCartOutlined />
-                </Icon>
-                <Icon>
-                    <SearchOutlined />
-                </Icon>
-                <Icon>
-                    <FavoriteBorderOutlined />
-                </Icon>
-            </Info>
-        </Container>
-    );
-};
 
 export default Product;

@@ -2,6 +2,10 @@ import { Badge } from "@material-ui/core";
 import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+import { ShoppingCart } from "phosphor-react";
+import { Link } from "react-router-dom";
+
 // import { mobile } from "../responsive";
 
 const Container = styled.div`
@@ -45,6 +49,7 @@ const Center = styled.div`
 
 const Logo = styled.h1`
   font-weight: bold;
+  cursor: pointer;
 `;
 const Right = styled.div`
   flex: 1;
@@ -53,38 +58,52 @@ const Right = styled.div`
   justify-content: flex-end;
 `;
 
-const MenuItem = styled.div`
+const MenuItem = styled.button`
   font-size: 14px;
   cursor: pointer;
   margin-left: 25px;
+  border: none ;
 `;
 
 const Navbar = () => {
-    return (
-        <Container>
-            <Wrapper>
-                <Left>
-                    <Language>EN</Language>
-                    <SearchContainer>
-                        <Input placeholder="Search" />
-                        <Search style={{ color: "gray", fontSize: 16 }} />
-                    </SearchContainer>
-                </Left>
-                <Center>
-                    <Logo>Assam-kart</Logo>
-                </Center>
-                <Right>
-                    <MenuItem>REGISTER</MenuItem>
-                    <MenuItem>SIGN IN</MenuItem>
-                    <MenuItem>
-                        <Badge badgeContent={2} color="primary">
-                            <ShoppingCartOutlined />
-                        </Badge>
-                    </MenuItem>
-                </Right>
-            </Wrapper>
-        </Container>
-    );
+  const navigate = useNavigate();
+  // const showAllProduct = () => {
+  //   navigate("/products")
+  // }
+  const goToHome = () => {
+    navigate("/")
+  }
+  return (
+    <Container>
+      <Wrapper>
+        <Left>
+          <Language>EN</Language>
+          <SearchContainer>
+            <Input placeholder="Search" />
+            <Search style={{ color: "gray", fontSize: 16 }} />
+          </SearchContainer>
+        </Left>
+        <Center>
+          <Logo onClick={goToHome}>Assam-kart</Logo>
+        </Center>
+        <Right>
+          <Link to="/products">
+            <MenuItem>PRODUCTS</MenuItem>
+          </Link>
+          <MenuItem>REGISTER</MenuItem>
+          <MenuItem>SIGN IN</MenuItem>
+          <MenuItem>
+            {/* <Badge badgeContent={1} color="primary">
+              <ShoppingCartOutlined />
+            </Badge> */}
+            <Link to="/cart">
+              <ShoppingCart size={25} />
+            </Link>
+          </MenuItem>
+        </Right>
+      </Wrapper>
+    </Container>
+  );
 };
 
 export default Navbar;

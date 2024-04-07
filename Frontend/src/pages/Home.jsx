@@ -3,6 +3,8 @@ import Navbar from '../components/Navbar'
 import Slider from '../components/Slider'
 import Categories from '../components/Categories'
 import Products from '../components/Products'
+import Newsletter from '../components/Newsletter'
+import Footer from '../components/Footer'
 // import { Slider } from '@material-ui/core'
 
 const Home = () => {
@@ -12,6 +14,8 @@ const Home = () => {
             <Slider />
             <Categories />
             <Products />
+            <Newsletter />
+            <Footer />
         </>
     )
 }

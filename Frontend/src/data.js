@@ -44,33 +44,49 @@ export const popularProducts = [
   {
     id: 1,
     img: "https://upload.wikimedia.org/wikipedia/commons/4/48/DWIJEN_%2843%29.jpg",
+    price: 400.0,
+    productName: "Mekhela-Sador",
   },
   {
     id: 2,
     img: "https://images.meesho.com/images/products/241270320/k6amj_512.webp",
+    price: 500.0,
+    productName: "Muga-Mekhela-Sador",
   },
   {
     id: 3,
     img: "https://sanjuktasstudios.com/cdn/shop/files/17.jpg?v=1698504823&width=2048",
+    price: 600.0,
+    productName: "Pator-Mekhela-Sador",
   },
   {
     id: 4,
     img: "https://5.imimg.com/data5/SELLER/Default/2020/11/OP/DU/QJ/27013378/missing-gero-design-mekhela-chadar.jpeg",
+    price: 650.0,
+    productName: "Mising-Mekhela-Sador",
   },
   {
     id: 5,
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2wi6KqKcK8y9m8B0zF3q1ansJBqyZ6r7nVT3GcDDT5g&s",
+    price: 750.0,
+    productName: "Bodo-Mekhela-Sador",
   },
   {
     id: 6,
     img: "https://m.media-amazon.com/images/I/91qwhW6GqAL.jpg",
+    price: 850.0,
+    productName: "Assamese-Gamusa",
   },
   {
     id: 7,
     img: "https://m.media-amazon.com/images/I/614vF1ihgsL._AC_UY350_.jpg",
+    price: 800.0,
+    productName: "Missing-Gamusa",
   },
   {
     id: 8,
     img: "https://m.media-amazon.com/images/I/71-t1U5ULdL._AC_UY1100_.jpg",
+    price: 700.0,
+    productName: "Bodo-Gamusa",
   },
 ];
